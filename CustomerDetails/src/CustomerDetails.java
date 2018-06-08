@@ -1,3 +1,6 @@
+
+import java.util.Scanner;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -119,6 +122,76 @@ class ItemProcessing{
      }
 
  }
+
+class Demo{
+    public static void main(String[] args) {
+        int i;
+        CustomerDetails cd=new CustomerDetails();
+        ItemProcessing I =new ItemProcessing();
+        OrderSummary os=new OrderSummary();
+        Scanner in=new Scanner(System.in);
+        
+        System.out.println("CUSTOMER DETAILS");
+        System.out.println("Enter Customer Name:");
+        String name=cd.getCustomerName(in.nextLine());
+        System.out.println("Enter Customer Phone Number:");
+        String phoneNum=cd.getCustomerName(in.nextLine());
+        
+        System.out.println("+-------------+------------------------+----------------+");
+        System.out.println("|----------THE MENU DETAILS ARE AS FOLLOWS--------------|");
+        System.out.println("+-------------+------------------------+----------------+");
+        System.out.println("|--Item Code--|-------Item Type--------|---Unit Price---|");
+        System.out.println("+-------------+------------------------+----------------+");
+        for(i=0;i<10;i++)
+        {
+            
+            System.out.print("|------"+I.printCode(i)+"------+"+I.printItemName(i)+"+------"+I.printUnitPrice(i)+"-------|");
+            System.out.print("\n");
+        }
+        System.out.println("+-------------+------------------------+----------------+");
+        
+       
+        int[] itemQuant=new int[10];
+        int[] subTotalbill=new int[10];
+        int totalBill=0;
+        System.out.println("\n\nEnter the Quantity of the Food Ordered for the following Item codes:");
+        for(i=0;i<10;i++)
+        {
+            System.out.print("Code "+i+":");
+            int n=in.nextInt();
+            itemQuant[i]=I.getQuantity(i,n);
+            System.out.print("");
+            
+            subTotalbill[i]=I.printSubTotal(i,itemQuant[i],I.printUnitPrice(i));
+            
+        }
+        System.out.print("\n");
+        System.out.print("\n");
+        
+        
+        
+        System.out.println("+-------------+------------------------+----------------+--------------------+---------------+");
+        System.out.println("|------------------------------THE SYSTEM GENERATED BILL IS----------------------------------|");
+        System.out.println("+-------------+------------------------+----------------+--------------------+---------------+");
+        System.out.println("|--Item Code--|-------Item Type--------|---Unit Price---|--Quantity Ordered--|---Sub Total---|");
+        System.out.println("+-------------+------------------------+----------------+--------------------+---------------+");
+        for(i=0;i<10;i++)
+        {
+            if(itemQuant[i]>0){
+                System.out.print("|------"+I.printCode(i)+"------+"+I.printItemName(i)+"+------"+I.printUnitPrice(i)+"-------|---------"+itemQuant[i]+"----------|------"+subTotalbill[i]+"------|");
+                System.out.print("\n");
+            }
+        }
+        System.out.println("+-------------+------------------------+----------------+--------------------+---------------+");
+        System.out.println("|------------------------------------------------------------ORDER TOTAL-----+-------"+os.orderTotal(subTotalbill)+"----|");
+        System.out.println("+-------------+------------------------+----------------+--------------------+---------------+");
+        System.out.print("\n");
+        System.out.println("THANK YOU MR/MISS "+name+".... VISIT AGAIN...");
+        
+        System.exit(0);
+      
+    }
+}
  
 
 
