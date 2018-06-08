@@ -25,7 +25,7 @@ public class testFoodOrderingSystem {
     
     @BeforeClass
     public static void setUpClass() {
-        CustomerDetails cd=new CustomerDetails();
+        
     }
     
     @AfterClass
@@ -34,6 +34,7 @@ public class testFoodOrderingSystem {
     
     @Before
     public void setUp() {
+        CustomerDetails cd=new CustomerDetails();
     }
     
     @After
