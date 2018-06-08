@@ -18,11 +18,12 @@ import static org.junit.Assert.*;
 public class testFoodOrderingSystem {
     CustomerDetails cd;
     ItemProcessing I;
+    OrderSummary os;
    
     public testFoodOrderingSystem() {
         CustomerDetails cd;
         ItemProcessing I;
-    
+        OrderSummary os;
     }
     
     @BeforeClass
@@ -38,6 +39,7 @@ public class testFoodOrderingSystem {
     public void setUp() {
         CustomerDetails cd=new CustomerDetails();
         ItemProcessing I =new ItemProcessing();
+        OrderSummary os=new OrderSummary();
     }
     
     @After
@@ -81,6 +83,14 @@ public class testFoodOrderingSystem {
      public void testPrintSubTotal(){
          assertEquals(230,(I.printSubTotal(0,I.getQuantity(0,2),I.printUnitPrice(0))));
      }
-     
+     public void testOrderTotal(){
+         int[] a=new int[5];
+                 a[0]=1;
+                 a[1]=2;
+                 a[2]=4;
+                 a[3]=10;
+                 a[4]=20;
+        assertEquals(37,os.orderTotal(a)); 
+     }
      
 }

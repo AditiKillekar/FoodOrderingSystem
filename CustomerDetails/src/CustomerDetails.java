@@ -105,3 +105,20 @@ class ItemProcessing{
     }
 }
 
+ 
+    
+ class OrderSummary{
+
+    int orderTotal(int[] x) {
+        //int billTotal=0;
+        int billTotal=0,i;
+        for(i=0;i<10;i++){
+            billTotal+=x[i];
+        }
+        return billTotal;
+     }
+
+ }
+ 
+
+
