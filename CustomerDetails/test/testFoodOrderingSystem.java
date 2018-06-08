@@ -17,9 +17,11 @@ import static org.junit.Assert.*;
  */
 public class testFoodOrderingSystem {
     CustomerDetails cd;
+    ItemProcessing I;
    
     public testFoodOrderingSystem() {
         CustomerDetails cd;
+        ItemProcessing I;
     
     }
     
@@ -35,6 +37,7 @@ public class testFoodOrderingSystem {
     @Before
     public void setUp() {
         CustomerDetails cd=new CustomerDetails();
+        ItemProcessing I =new ItemProcessing();
     }
     
     @After
@@ -62,5 +65,22 @@ public class testFoodOrderingSystem {
             //Logger.getLogger(testFoodOrdering.class.getName()).log(Level.SEVERE, null, ex);
         }
      } 
+     
+     public void testPrintCode(){
+         assertEquals(0,I.printCode(0));
+     }
+     
+     public void testPrintItemName(){
+         assertEquals("Lemon Coriander",I.printItemName(0));
+     }
+     
+     public void testPrintUnitPrice(){
+         assertEquals(115,I.printUnitPrice(0));
+     }
+     
+     public void testPrintSubTotal(){
+         assertEquals(230,(I.printSubTotal(0,I.getQuantity(0,2),I.printUnitPrice(0))));
+     }
+     
      
 }

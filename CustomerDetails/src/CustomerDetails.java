@@ -30,3 +30,78 @@ class CustomerDetails {
     
 }
 }
+
+
+class ItemProcessing{
+
+     int printCode(int i) {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return i;
+    }
+    
+  
+     String printItemName(int i) {
+        String[] itemName=new String[10];
+        if(i==0)
+            itemName[0]="--Lemon Coriander Soup--";
+        else if(i==1)
+            itemName[1]="--Manchow Soup----------";
+        else if(i==2)
+            itemName[2]="--Paneer Chilly---------";
+        else if(i==3)
+            itemName[3]="--Paneer Sizzling-------";
+        else if(i==4)
+            itemName[4]="--Paneer Sautte---------";
+        else if(i==5)
+            itemName[5]="--Veg Crunchy-----------";
+        else if(i==6)
+            itemName[6]="--Manchurian Noodles----";
+        else if(i==7)
+            itemName[7]="--BabyCorn Manchurian---";
+        else if(i==8)
+            itemName[8]="--Fried Rice------------";
+        else if(i==9)
+            itemName[9]="--Schezwan Rice---------";
+
+        
+        
+        return itemName[i];
+    }
+
+     int printUnitPrice(int i) {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+     int[] unitPrice=new int[10];
+        if(i==0)
+            unitPrice[0]=115;
+        else if(i==1)
+            unitPrice[1]=105;
+        else if(i==2)
+            unitPrice[2]=120;
+        else if(i==3)
+            unitPrice[3]=130;
+        else if(i==4)
+            unitPrice[4]=150;
+        else if(i==5)
+            unitPrice[5]=100;
+        else if(i==6)
+            unitPrice[6]=110;
+        else if(i==7)
+            unitPrice[7]=120;
+        else if(i==8)
+            unitPrice[8]=120;
+        else if(i==9)
+            unitPrice[9]=200;
+         
+        
+        return unitPrice[i];   
+    }
+    
+    static int getQuantity(int i,int j) {
+        return j;
+    }
+    
+    static int printSubTotal(int i,int j,int unitPrice){
+        return j*unitPrice;
+    }
+}
+
