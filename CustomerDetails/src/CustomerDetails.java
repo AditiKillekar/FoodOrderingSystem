@@ -8,23 +8,36 @@ import java.util.Scanner;
  */
 
 /**
- *
- * @author User
+ * class CustomerDetails takes basic customer details as input from the Manager
+ * @author Aditi Killekar
  */
 class CustomerDetails {
+    
+    /**
+     * This method reads Customer Name by the parameter i
+     * @param i The Customer Name
+     * @return Name of the customer
+     */
     static String getCustomerName(String i) {
      return i;
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-    String getCustomerPhone(String string) throws invalidStringLengthException {
+/**
+ * This method reads Customer Phone number by the parameter string
+ * @param str The customer phone number
+ * @return A customer phone number
+ * @throws CustomerDetails.invalidStringLengthException 
+ */
+    String getCustomerPhone(String str) throws invalidStringLengthException {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        if(string.length()!=10)
+        if(str.length()!=10)
             throw new invalidStringLengthException();
         else 
-            return string;
+            return str;
     }
-
+/**
+ * Is the user defined Exception class that extends the main class Exception
+ */
     class invalidStringLengthException extends Exception {
 
      invalidStringLengthException() {
@@ -34,15 +47,31 @@ class CustomerDetails {
 }
 }
 
+/**
+ * This class keeps track of all the Item details like the item name,code,unit price,
+ * The class also takes the quantity of each item calculates the SubTotal bill 
+ * @author Aishwarya N D
+ */
 
 class ItemProcessing{
+    
+    /**
+     * This method prints the Item code
+     * @param i is the index of the item
+     * @return code of the item
+     */
 
      int printCode(int i) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         return i;
     }
     
-  
+  /**
+     * This method prints the Item Name
+     * @param i is the code of the item
+     * @return Name of the item with code i
+     */
+     
      String printItemName(int i) {
         String[] itemName=new String[10];
         if(i==0)
@@ -70,6 +99,12 @@ class ItemProcessing{
         
         return itemName[i];
     }
+     
+      /**
+     * This method prints the Item's Unit Price
+     * @param i is the code of the item
+     * @return Unit Price of the item with code i
+     */
 
      int printUnitPrice(int i) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -99,19 +134,42 @@ class ItemProcessing{
         return unitPrice[i];   
     }
     
+     /**
+      * this method gets the item quantity from the user
+      * @param i Item code
+      * @param j Item quantity
+      * @return Item Quantity
+      */
     static int getQuantity(int i,int j) {
         return j;
     }
     
+    /**
+     * This method prints the SubTotal bill of the specified item
+     * @param i Item Code
+     * @param j Item Quantity
+     * @param unitPrice is the unit price of the item with code i
+     * @return SubTotal bill of item with code i
+     */
     static int printSubTotal(int i,int j,int unitPrice){
         return j*unitPrice;
     }
 }
 
  
-    
+    /**
+     * This class calculates the totalBill
+     * @author ShreshtaSP
+     */
+
  class OrderSummary{
 
+/**
+ * Calculates the total bill
+ * @param x Array of subTotal bills of all the items ordered
+ * @return  The Total bill
+ */
+     
     int orderTotal(int[] x) {
         //int billTotal=0;
         int billTotal=0,i;
@@ -122,8 +180,16 @@ class ItemProcessing{
      }
 
  }
+/**
+ * This class holds the main method where all the member methods of rest of the classes are accessed
+ * @author ShreshtaSP
+ */
 
 class Demo{
+    /**
+     * main method accesses all the methods from rest of the classes
+     * @param args 
+     */
     public static void main(String[] args) {
         int i;
         CustomerDetails cd=new CustomerDetails();
